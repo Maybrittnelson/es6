@@ -86,26 +86,26 @@ __webpack_require__(2);
 "use strict";
 
 
-function test() {
-    // for(let i=1;i<3;i++) {
-    //     console.log(i)
-    // }
-    // console.log(i);
-    //不能重复定义变量名
-    var a = 1;
-    //let a =2
-    //常量不能修改
-    //且不能重新赋引用值
-    var b = 1;
-    //这里只是对值的内容做了改变.并没有改变c的指针
-    var c = {
-        a: 1
-    };
-    c.b = 1;
-    console.log(c);
+{
+    var regex = new RegExp('xyz', 'i');
+    var regex2 = new RegExp(/xyz/i);
+
+    console.log(regex.test('xyz123'), regex2.test('xyz123'));
+
+    var regex3 = new RegExp(/xyz/ig, 'i');
+    console.log(regex3.flags);
 }
 
-test();
+{
+    var s = 'bbb_bb_b';
+    var a1 = /b+/g;
+    var a2 = new RegExp('b+', 'y');
+
+    console.log('one', a1.exec(s).a2.exec(s));
+    console.log('two', a1.exec(s).a2.exec(s));
+
+    console.log(a1.sticky, a2.sticky);
+}
 
 /***/ })
 /******/ ]);
